@@ -13,6 +13,10 @@
   # Raw configuration files
   home.file.".gitconfig".source = ./osx/gitconfig;
 
+  # tmux setup
+  home.file.".tmux.d".source = ./osx/tmux/tmux.d;
+  home.file.".tmux.conf".source = ./osx/tmux/tmux.conf;
+  
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards

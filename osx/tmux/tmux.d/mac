@@ -1,0 +1,10 @@
+# Statusbar if tmux runs in X
+#
+set -g status-style bright
+set -g status-right-length 40
+set -g status-left-length 40
+
+
+set-window-option -g window-status-style fg=blue
+
+set -g status-left '#[fg=green]#(/Users/dsyang/.tmux.d/macscripts/batt/batt )#[default]'
