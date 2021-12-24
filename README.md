@@ -30,3 +30,5 @@ Clone this repo and symlink to ~/.config/nixpkgs
 - `home-manager generations` to see rebuild history
 - `<path to old generation>/activate` to rollback
 
+# Further reading:
+https://cuddly-octo-palm-tree.com/posts/2021-12-19-tyska-nix-shell/
