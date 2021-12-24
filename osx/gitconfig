@@ -1,0 +1,26 @@
+[user]
+        name = Dan Yang
+        email = dsyang92@gmail.com
+[code]
+	editor = vim
+[color]
+	ui = true
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	d = diff
+	hist = log --pretty=format:\" %h %ad | %s%d [%an]\" --graph --date=short -n 8
+	histall = log --pretty=format:\" %h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-tile -t
+	dump = cat-file -p
+  sl = log --pretty=format:\" %h %ad | %s%d [%an]\" --graph --date=short -n 15
+[core]
+	pager = less -X -F
+[credential]
+	helper = osxkeychain
+[merge]
+  ff = only
+[init]
+	defaultBranch = main
