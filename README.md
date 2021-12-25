@@ -41,9 +41,8 @@ follow comment : https://github.com/nix-community/home-manager/issues/2564#issue
 ## 2.2 verify `home-manager` installation. 
 - calling `home-manager` does something.
 
-
 ## Cheat sheet (pre-darwin)
-
+NOTE: as of now, `home-manager` isn't used to configure anything anymore. See the commit tagged `separate-home-manager` for when home manager was still used separately.
 - `home-manager switch` to rebuild env
 - `home-manager generations` to see rebuild history
 - `<path to old generation>/activate` to rollback
@@ -54,7 +53,8 @@ source: https://opensourcelibs.com/lib/nix-darwin
 
 `nix-shell '<darwin>' -A installer`
 
-darwin commands need sudo
+darwin commands need sudo. a useful shortcut is to change sudo to be touchid based:
+- edit `/etc/pam.d/sudo` to include `auth       sufficient     pam_tid.so` as the first line
 
 ## 3.2 verify installation:
 `darwin-rebuild switch`
@@ -64,8 +64,6 @@ darwin commands need sudo
 - `darwin-rebuild switch` to rebuild env
 - `darwin-rebuild --list-generations` to see build history
 - `darwin-rebuild --rollback` to go to previous generation
-
-
 
 
 # Uninstalling nix. 

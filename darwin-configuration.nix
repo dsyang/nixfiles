@@ -1,6 +1,47 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = [
+    <home-manager/nix-darwin>
+  ];
+
+  # Home-manager setup: my user-specific files
+  users.users.dsyang = {
+    name = "dsyang";
+    home = "/Users/dsyang";
+  };
+
+  home-manager = {
+    users.dsyang = {pkgs, home, ...}: {
+
+      home.packages = [
+        pkgs.httpie
+        pkgs.tmux
+        pkgs.exa
+      ];
+
+      # Raw configuration files
+      home.file = {
+        ".gitconfig".source = ./osx/gitconfig;
+        ".tmux.d".source = ./osx/tmux/tmux.d;
+        ".tmux.conf".source = ./osx/tmux/tmux.conf;
+        ".zshrc".source = ./osx/zshrc;
+      };
+
+
+      # This value determines the Home Manager release that your
+      # configuration is compatible with. This helps avoid breakage
+      # when a new Home Manager release introduces backwards
+      # incompatible changes.
+      #
+      # You can update Home Manager without changing this value. See
+      # the Home Manager release notes for a list of state version
+      # changes in each release.
+      home.stateVersion = "22.05";
+    };
+  };
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
