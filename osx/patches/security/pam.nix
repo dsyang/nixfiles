@@ -1,5 +1,6 @@
 # Upstream PR: https://github.com/LnL7/nix-darwin/pull/228
 # via: https://github.com/malob/nixpkgs/blob/master/darwin/modules/security/pam.nix
+# darwin-rebuild --rollback does not revert the edit to `/etc/pam.d/sudo`
 { config, lib, pkgs, ... }:
 
 with lib;
