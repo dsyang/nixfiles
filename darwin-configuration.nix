@@ -65,7 +65,32 @@
   programs.zsh.enable = true;  # default shell on catalina
   # programs.fish.enable = true;
 
+  # Setup macos system values
+  # NOTE: things need to be at default settings (such as keyboard modifiers) for this to take effect
+  system = {
+    stateVersion = 4;
+    keyboard = {
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
+    };
+    
+    defaults = {
+      LaunchServices.LSQuarantine = false;
+      
+      NSGlobalDomain = {
+        PMPrintingExpandedStateForPrint = true;
+        PMPrintingExpandedStateForPrint2 = true;
+
+        NSNavPanelExpandedStateForSaveMode = true;
+        NSNavPanelExpandedStateForSaveMode2 = true;
+
+        NSDocumentSaveNewDocumentsToCloud = false;
+      };
+
+    };
+  };
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = 4;
+#  system.stateVersion = 4;
 }

@@ -53,11 +53,12 @@ source: https://opensourcelibs.com/lib/nix-darwin
 
 `nix-shell '<darwin>' -A installer`
 
-darwin commands need sudo. a useful shortcut is to change sudo to be touchid based:
-- edit `/etc/pam.d/sudo` to include `auth       sufficient     pam_tid.so` as the first line
-
 ## 3.2 verify installation:
 `darwin-rebuild switch`
+
+if you hit `error: not linking environment.etc."nix/nix.conf" because /etc/nix/nix.conf already exists, skipping...`, remove the existing `nix.conf` created by the nix install in favor of the one created by nix-darwin:
+
+`sudo cp /etc/nix/nix.conf /etc/nix/nix.conf-before-nix-darwin; sudo rm /etc/nix/nix.conf`
 
 
 ## 3.3 Cheatsheet 
