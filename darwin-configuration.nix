@@ -4,6 +4,7 @@
 
   imports = [
     <home-manager/nix-darwin>
+    ./osx/patches/security/pam.nix
   ];
 
   # Home-manager setup: my user-specific files
@@ -41,6 +42,9 @@
       home.stateVersion = "22.05";
     };
   };
+
+  # add touchid support to sudo
+  security.pam.enableSudoTouchIdAuth = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
