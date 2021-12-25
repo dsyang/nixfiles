@@ -83,3 +83,12 @@ PATH="/Users/dsyang/bin/flutter/bin:$PATH"
 ###########
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
+###########
+## nix-darwin install
+###########
+export NIX_PATH=darwin-config=$HOME/.config/nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels${NIX_PATH:+:}$NIX_PATH
+
+###########
+## nix home manager 
+###########
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
