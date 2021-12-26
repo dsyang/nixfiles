@@ -68,6 +68,8 @@
   # Setup macos system values
   # NOTE: things need to be at default settings (such as keyboard modifiers) for this to take effect
   system = {
+    # Used for backwards compatibility, please read the changelog before changing.
+    # $ darwin-rebuild changelog
     stateVersion = 4;
     keyboard = {
       enableKeyMapping = true;
@@ -85,12 +87,37 @@
         NSNavPanelExpandedStateForSaveMode2 = true;
 
         NSDocumentSaveNewDocumentsToCloud = false;
+        
+        "com.apple.swipescrolldirection" = false;
+
+        NSAutomaticSpellingCorrectionEnabled = false;
+
+        AppleKeyboardUIMode = 3;
+
+        AppleFontSmoothing = 2;
+
+        AppleShowAllExtensions = true;
+      };
+
+      dock = {
+        expose-animation-duration = "0.1";
+        expose-group-by-app = false;
+        mru-spaces = false;
+        orientation = "bottom";
+        show-recents = false;
+      };
+      
+      finder = {
+        CreateDesktop = false;
+        _FXShowPosixPathInTitle = true;
+        FXEnableExtensionChangeWarning = false;
+      };
+
+      screencapture = {
+        disable-shadow = true;
       };
 
     };
   };
 
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
-#  system.stateVersion = 4;
 }
