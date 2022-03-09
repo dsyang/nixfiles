@@ -32,6 +32,8 @@ This installs nix in multi-user mode which will create users like _nixbld[1..32]
 source: https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix
 `home-manager` is something that lets you use nix setup user-specific configs like dotfiles. 
 
+- `nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager`
+- `nix-channel --update`
 - `nix-shell '<home-manager>' -A install`
 - `home-manager switch` must call this to rebuild the system (until nix-darwin installed)
 
