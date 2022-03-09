@@ -39,6 +39,7 @@ source: https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-n
 
 If/when there's a problem with $NIX_PATH not being found: 
 follow comment : https://github.com/nix-community/home-manager/issues/2564#issuecomment-994960513 in appending to ~/.zshenv
+`$ echo 'export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels\n' >> ~/.zshenv `
 
 ## 2.2 verify `home-manager` installation. 
 - calling `home-manager` does something.
