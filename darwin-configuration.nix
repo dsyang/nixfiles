@@ -16,10 +16,15 @@
   home-manager = {
     users.dsyang = {pkgs, home, ...}: {
 
+      nixpkgs.config = {
+        allowUnfree = true;
+      };
+
       home.packages = [
         pkgs.httpie
         pkgs.tmux
         pkgs.exa
+        pkgs.deno
       ];
 
       # Raw configuration files
@@ -40,6 +45,45 @@
       # the Home Manager release notes for a list of state version
       # changes in each release.
       home.stateVersion = "22.05";
+
+      programs = {
+
+        vscode = {
+          enable = false;
+          extensions = with pkgs.vscode-extensions; [
+            "cou929.vscode-cut-all-right"
+            "dendron.dendron"
+            "dendron.dendron-paste-image"
+            "bbenoist.nix"
+            ## personal
+            "github.codespaces"
+
+          ];
+          keybindings = [
+            {
+              "key" = "ctrl+alt+f";
+              "command" = "cursorWordPartRight";
+              "when" =  "textInputFocus";
+            }
+            {
+              "key" = "ctrl+alt+b";
+              "command" = "cursorWordPartLeft";
+              "when" = "textInputFocus";
+            }
+            {
+              "key" = "ctrl+k";
+              "command" = "-deleteAllRight";
+              "when" = "textInputFocus && !editorReadonly";
+            }
+            {
+              "key" = "ctrl+y";
+              "command" = "editor.action.clipboardPasteAction";
+            }
+          ];
+        };
+
+      };
+
     };
   };
 
