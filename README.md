@@ -54,6 +54,9 @@ NOTE: as of now, `home-manager` isn't used to configure anything anymore. See th
 source: https://opensourcelibs.com/lib/nix-darwin
 `nix-darwin` lets you configure your macos system let changing preferences in finder & more. It includes modules for configuring other nix things like `home-manager`
 
+`nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer`
+`./result/bin/darwin-installer`
+(no edit, yes manage with nix-channel)
 `nix-shell '<darwin>' -A installer`
 
 ## 3.2 verify installation:
