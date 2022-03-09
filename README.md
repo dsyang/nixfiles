@@ -68,6 +68,7 @@ if you hit `error: not linking environment.etc."nix/nix.conf" because /etc/nix/n
 
 
 # Uninstalling nix. 
+https://iohk.zendesk.com/hc/en-us/articles/4415830650265-Uninstall-nix-on-MacOS
 
 ## -3. Uninstalling a nix-darwin install
 ## -2. Uninstalling a home-manager install
