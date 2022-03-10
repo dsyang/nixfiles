@@ -70,32 +70,39 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # Save screenshots to documents
 defaults write com.apple.screencapture location -string "$HOME/Documents"
 
-#CANT
+# NOT NEEDED
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
 
-
------- PORTED EVERYTHING ABOVE HERE ----
-
+#CUSTOM
 # Finder: show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
+#CUSTOM
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
 
+#CUSTOM
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+
+# NOT NEEDED
 # Finder: allow text selection in Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
+#CUSTOM
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
+#CUSTOM
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
+
+------ PORTED EVERYTHING ABOVE HERE ----
+#CANT
 # Show the ~/Library folder
 chflags nohidden ~/Library
 

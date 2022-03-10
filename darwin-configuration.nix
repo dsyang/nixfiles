@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  nix.nixPath = [ "darwin=/Users/dsyang/.nix-defexpr/darwin" ];
 
   imports = [
     <home-manager/nix-darwin>
@@ -176,6 +177,13 @@
         CreateDesktop = false;
         _FXShowPosixPathInTitle = true;
         FXEnableExtensionChangeWarning = false;
+
+        # custom options from dsyang/nix-darwin
+        AppleShowAllFiles = true;
+        ShowStatusBar = true;
+        ShowPathbar = true;
+        FXDefaultSearchScope = "SCcf";
+        FXPreferredViewStyle = "Nlsv";
       };
 
       screencapture = {
