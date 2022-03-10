@@ -20,11 +20,16 @@
         allowUnfree = true;
       };
 
-      home.packages = [
-        pkgs.httpie
-        pkgs.tmux
-        pkgs.exa
-        pkgs.deno
+      home.packages = with pkgs; [
+        httpie
+        tmux
+        exa
+        deno
+        m-cli
+        jq
+      ] ++ lib.optionals stdenv.isDarwin [
+        cocoapods
+        m-cli # useful macOS CLI commands
       ];
 
       # Raw configuration files
@@ -49,16 +54,9 @@
       programs = {
 
         vscode = {
-          enable = false;
-          extensions = with pkgs.vscode-extensions; [
-            "cou929.vscode-cut-all-right"
-            "dendron.dendron"
-            "dendron.dendron-paste-image"
-            "bbenoist.nix"
-            ## personal
-            "github.codespaces"
-
-          ];
+          # Want to only use this to control configuration.
+          # Still need to download vscode manually
+          enable = true;
           keybindings = [
             {
               "key" = "ctrl+alt+f";
@@ -80,6 +78,17 @@
               "command" = "editor.action.clipboardPasteAction";
             }
           ];
+
+          extensions = (with pkgs.vscode-extensions; [
+            bbenoist.nix
+          ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [{
+            # taken from the package.json
+            name = "vscode-cut-all-right";
+            publisher = "cou929";
+            version = "0.0.1";
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-QBYOSklu1scLjMSQ2ZWFwr2+UoJMAZIxjeFdo5d67Lg=";
+          }];
         };
 
       };
@@ -117,7 +126,7 @@
     stateVersion = 4;
     keyboard = {
       enableKeyMapping = true;
-      remapCapsLockToControl = true;
+      remapCapsLockToControl = true; # System prefs will still show "Caps Lock"
     };
     
     defaults = {

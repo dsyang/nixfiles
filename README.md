@@ -73,6 +73,13 @@ if you hit `error: not linking environment.etc."nix/nix.conf" because /etc/nix/n
 - `darwin-rebuild --list-generations` to see build history
 - `darwin-rebuild --rollback` to go to previous generation
 
+## VS Code
+- `enabled = true` downloads app but doesn't put it anywhere accessible. Will still need to download manually
+- Installing extensions is hard(er). Need to follow something like https://github.com/BenDHarvey/configuration/blob/092195ee496c184fefebca1706199732d2385bdc/nix/modules/home/shared/vscode.nix#L12-L25
+   - Find extension in VSCode marketplace
+   - Get name, publisher, version.
+      - unique identifier is `publisher.name`
+   - For sha256, leave it blank for now, running `darwin-rebuild switch` will error out and show you the sha256 it found.
 
 # Uninstalling nix. 
 https://iohk.zendesk.com/hc/en-us/articles/4415830650265-Uninstall-nix-on-MacOS
