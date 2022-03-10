@@ -157,19 +157,22 @@
         AppleKeyboardUIMode = 3;
 
         AppleFontSmoothing = 2;
-
-        AppleShowAllExtensions = true;
       };
 
       dock = {
+        # need to `killall Dock` for new settings to apply
+        autohide = true;
         expose-animation-duration = "0.1";
         expose-group-by-app = false;
         mru-spaces = false;
         orientation = "bottom";
         show-recents = false;
+        tilesize = 48;
       };
 
       finder = {
+        # killall Finder to apply
+        AppleShowAllExtensions = true;
         CreateDesktop = false;
         _FXShowPosixPathInTitle = true;
         FXEnableExtensionChangeWarning = false;
@@ -177,6 +180,7 @@
 
       screencapture = {
         disable-shadow = true;
+        location = "/Users/dsyang/Documents";
       };
 
     };

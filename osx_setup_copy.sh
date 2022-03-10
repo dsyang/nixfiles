@@ -67,17 +67,15 @@ defaults write com.apple.finder CreateDesktop -bool false
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
-
------- PORTED EVERYTHING ABOVE HERE ----
-
 # Save screenshots to documents
 defaults write com.apple.screencapture location -string "$HOME/Documents"
 
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
-
+#CANT
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
+
+
+------ PORTED EVERYTHING ABOVE HERE ----
 
 # Finder: show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
