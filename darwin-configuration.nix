@@ -57,7 +57,16 @@
           # Want to only use this to control configuration.
           # Still need to download vscode manually
           enable = true;
+
+          userSettings = {
+            "files.trimTrailingWhitespace" = true;
+          };
+
           keybindings = [
+            {
+              "key" = "ctrl+x ctrl+s";
+              "command" = "workbench.action.files.save";
+            }
             {
               "key" = "ctrl+alt+f";
               "command" = "cursorWordPartRight";
@@ -128,10 +137,10 @@
       enableKeyMapping = true;
       remapCapsLockToControl = true; # System prefs will still show "Caps Lock"
     };
-    
+
     defaults = {
       LaunchServices.LSQuarantine = false;
-      
+
       NSGlobalDomain = {
         PMPrintingExpandedStateForPrint = true;
         PMPrintingExpandedStateForPrint2 = true;
@@ -140,7 +149,7 @@
         NSNavPanelExpandedStateForSaveMode2 = true;
 
         NSDocumentSaveNewDocumentsToCloud = false;
-        
+
         "com.apple.swipescrolldirection" = false;
 
         NSAutomaticSpellingCorrectionEnabled = false;
@@ -159,7 +168,7 @@
         orientation = "bottom";
         show-recents = false;
       };
-      
+
       finder = {
         CreateDesktop = false;
         _FXShowPosixPathInTitle = true;
