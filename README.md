@@ -6,7 +6,7 @@ Using nix for my dotfiles and programs
 [x] setup oh-my-zsh. use ZSH_CUSTOM for custom theme:
    - https://github.com/ohmyzsh/ohmyzsh/wiki/Customization
    - https://nix-community.github.io/home-manager/options.html#opt-programs.zsh.oh-my-zsh.custom
-[ ] setup ssh so I don't have to keep typing passphrase
+[x] setup ssh so I don't have to keep typing passphrase
 
 # Getting Started with `nix`, `nix-darwin`, and `home-manager` on apple silicon.
 Main reference: https://gist.github.com/mandrean/65108e0898629e20afe1002d8bf4f223

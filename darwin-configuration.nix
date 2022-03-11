@@ -54,12 +54,26 @@
 
       programs = {
 
+        autojump = {
+          enable = true;
+        };
+
         zsh = {
           enable = true;
+
           oh-my-zsh = {
             enable = true;
             custom = "/Users/dsyang/.config/nixpkgs/oh-my-zsh-custom/";
             theme = "dsyang";
+
+            extraConfig = ''
+            zstyle :omz:plugins:ssh-agent lifetime 72h
+            '';
+            plugins = [
+              "ssh-agent"
+              "git"
+              "autojump"
+            ];
           };
 
           history = {
