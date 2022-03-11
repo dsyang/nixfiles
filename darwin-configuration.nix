@@ -235,6 +235,9 @@
         AppleKeyboardUIMode = 3;
 
         AppleFontSmoothing = 2;
+
+        # custom options from dsyang/nix-darwin
+        AppleShowAllFiles = true;
       };
 
       dock = {
@@ -256,7 +259,6 @@
         FXEnableExtensionChangeWarning = false;
 
         # custom options from dsyang/nix-darwin
-        AppleShowAllFiles = true;
         ShowStatusBar = true;
         ShowPathbar = true;
         FXDefaultSearchScope = "SCcf";
