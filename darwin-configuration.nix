@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  # Point darwin to a checkout of the dsyang/nix-darwin repo
   nix.nixPath = [ "darwin=/Users/dsyang/.nix-defexpr/darwin" ];
 
   imports = [
@@ -38,7 +39,6 @@
         ".gitconfig".source = ./osx/gitconfig;
         ".tmux.d".source = ./osx/tmux/tmux.d;
         ".tmux.conf".source = ./osx/tmux/tmux.conf;
-        ".zshrc".source = ./osx/zshrc;
       };
 
 
@@ -54,6 +54,61 @@
 
       programs = {
 
+        zsh = {
+          enable = true;
+          oh-my-zsh = {
+            enable = true;
+            custom = "/Users/dsyang/.config/nixpkgs/oh-my-zsh-custom/";
+            theme = "dsyang";
+          };
+
+          history = {
+            expireDuplicatesFirst = true;
+            extended = true;
+            save = 1000;
+            size = 1000;
+          };
+
+          localVariables = {
+            HOSTNAME = "`hostname`";
+            LC_ALL = "en_US.UTF-8";
+            LANG = "en_US.UTF-8";
+            LC_CTYPE = "en_US.UTF-8";
+            PAGER="less";
+          };
+
+          shellAliases = {
+            man = "LC_ALL=C LANG=C man";
+            ll = "ls -al";
+            ls = "ls -G";
+            freespace = "df -H";
+            sftp = "rlwrap sftp";
+          };
+
+          initExtraFirst = ''
+            export DISABLE_AUTO_TITLE="true"
+            export COMPLETION_WAITING_DOTS="true"
+
+            PATH="/Users/dsyang/bin:$PATH"
+          '';
+
+          initExtra = ''
+          ${(builtins.readFile ./zshrc-snippets/homebrew.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/java-android.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/rust.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/flutter.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/ocaml.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/vscode.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/nix.zsh)}
+          '';
+        };
+
         vscode = {
           # Want to only use this to control configuration.
           # Still need to download vscode manually
@@ -64,6 +119,14 @@
           };
 
           keybindings = [
+            {
+              "key" = "ctrl+x 2";
+              "command" = "workbench.action.splitEditorDown";
+            }
+            {
+              "key" = "ctrl+x 3";
+              "command" = "workbench.action.splitEditorRight";
+            }
             {
               "key" = "ctrl+x ctrl+s";
               "command" = "workbench.action.files.save";
