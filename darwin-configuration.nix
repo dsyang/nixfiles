@@ -2,7 +2,7 @@
 
 {
   # Point darwin to a checkout of the dsyang/nix-darwin repo
-  nix.nixPath = [ "darwin=/Users/dsyang/.nix-defexpr/darwin" ];
+  nix.nixPath = [ {"darwin" = "/Users/dsyang/.nix-defexpr/darwin";} ];
 
   imports = [
     <home-manager/nix-darwin>
@@ -39,6 +39,7 @@
         ".gitconfig".source = ./osx/gitconfig;
         ".tmux.d".source = ./osx/tmux/tmux.d;
         ".tmux.conf".source = ./osx/tmux/tmux.conf;
+        ".terminfo/78/xterm-kitty".source = ./osx/xterm-kitty-terminfo;
       };
 
 
@@ -92,9 +93,7 @@
           };
 
           shellAliases = {
-            man = "LC_ALL=C LANG=C man";
-            ll = "ls -al";
-            ls = "ls -G";
+            ll = "ls -alh";
             freespace = "df -H";
             sftp = "rlwrap sftp";
           };
@@ -107,15 +106,15 @@
           '';
 
           initExtra = ''
-          ${(builtins.readFile ./zshrc-snippets/homebrew.zsh)}
+          # $ {(builtins.readFile ./zshrc-snippets/homebrew.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/java-android.zsh)}
 
-          ${(builtins.readFile ./zshrc-snippets/rust.zsh)}
+          # $ {(builtins.readFile ./zshrc-snippets/rust.zsh)}
 
-          ${(builtins.readFile ./zshrc-snippets/flutter.zsh)}
+          # $ {(builtins.readFile ./zshrc-snippets/flutter.zsh)}
 
-          ${(builtins.readFile ./zshrc-snippets/ocaml.zsh)}
+          # $ {(builtins.readFile ./zshrc-snippets/ocaml.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/vscode.zsh)}
 
@@ -268,6 +267,15 @@
       screencapture = {
         disable-shadow = true;
         location = "/Users/dsyang/Documents";
+      };
+
+      # custom options from dsyang/nix-darwin
+      ActivityMonitor = {
+        OpenMainWindow = true;
+        IconType = 5;
+        ShowCategory = 100;
+        SortColumn = "CPUUsage";
+        SortDirection = 0;
       };
 
     };
