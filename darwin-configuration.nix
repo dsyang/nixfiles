@@ -42,7 +42,6 @@
         ".terminfo/78/xterm-kitty".source = ./osx/xterm-kitty-terminfo;
       };
 
-
       # This value determines the Home Manager release that your
       # configuration is compatible with. This helps avoid breakage
       # when a new Home Manager release introduces backwards
@@ -101,12 +100,14 @@
           initExtraFirst = ''
             export DISABLE_AUTO_TITLE="true"
             export COMPLETION_WAITING_DOTS="true"
-
+            export EDITOR="vim"
             PATH="/Users/dsyang/bin:$PATH"
           '';
 
           initExtra = ''
-          # $ {(builtins.readFile ./zshrc-snippets/homebrew.zsh)}
+          if command -v brew > /dev/null ; then
+            ${(builtins.readFile ./zshrc-snippets/homebrew.zsh)}
+          fi
 
           ${(builtins.readFile ./zshrc-snippets/java-android.zsh)}
 
