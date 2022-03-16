@@ -118,6 +118,8 @@
           ${(builtins.readFile ./zshrc-snippets/vscode.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/nix.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/ruby.zsh)}
           '';
         };
 
