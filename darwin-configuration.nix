@@ -105,9 +105,7 @@
           '';
 
           initExtra = ''
-          if command -v brew > /dev/null ; then
-            ${(builtins.readFile ./zshrc-snippets/homebrew.zsh)}
-          fi
+          ${(builtins.readFile ./zshrc-snippets/homebrew.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/java-android.zsh)}
 
