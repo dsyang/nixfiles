@@ -120,6 +120,8 @@
           ${(builtins.readFile ./zshrc-snippets/nix.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/ruby.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/misc-functions.zsh)}
           '';
         };
 
@@ -130,6 +132,15 @@
 
           userSettings = {
             "files.trimTrailingWhitespace" = true;
+            "typescript.tsdk" = "./node_modules/typescript/lib";
+            "[typescript]" = {
+              "editor.defaultFormatter"= "esbenp.prettier-vscode";
+              "editor.formatOnSave" = true;
+            };
+            "[typescriptreact]" = {
+              "editor.defaultFormatter"= "esbenp.prettier-vscode";
+              "editor.formatOnSave" = true;
+            };
           };
 
           keybindings = [
@@ -175,7 +186,112 @@
             version = "0.0.1";
             # install without this value, look at error message for calculated sha256.
             sha256 = "sha256-QBYOSklu1scLjMSQ2ZWFwr2+UoJMAZIxjeFdo5d67Lg=";
-          }];
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "remote-ssh-edit";
+            publisher = "ms-vscode-remote";
+            version = "0.76.1"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-VOl6l/4OXe7R+TznAKRgr8XU+CDp18qWC3y+K2bdC28=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "remote-ssh";
+            publisher = "ms-vscode-remote";
+            version = "0.76.1"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-iLgGkf9hx75whXI+kmkmiGw3fnkEGp37Ae7GMdAz0+Y=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "prettier-vscode";
+            publisher = "esbenp";
+            version = "9.3.0"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-hJgPjWf7a8+ltjmXTK8U/MwqgIZqBjmcCfHsAk2G3PA=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "kotlin";
+            publisher = "mathiasfrohlich";
+            version = "1.7.1"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-MuAlX6cdYMLYRX2sLnaxWzdNPcZ4G0Fdf04fmnzQKH4=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "terraform";
+            publisher = "hashicorp";
+            version = "2.20.0"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-ezMIX7m03y0dhoRLt7xs3zzif2LST3RVQmuUyBKh85s=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "gitlens";
+            publisher = "eamodio";
+            version = "12.0.4"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-T39laV6yWu0yKtTT2dmVOriawkrsmE4YqpidWG7OPOg=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "vscode-pull-request-github";
+            publisher = "github";
+            version = "0.38.1"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-opR+y818jrdyGGh61swbo0FWKJJCJzn6594km4B76d0=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "code-spell-checker";
+            publisher = "streetsidesoftware";
+            version = "2.1.7"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-C0jYDIDBK1JH8eFaFmCUilBXCbU5y2TRF3OZAw9ijoY=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "shellcheck";
+            publisher = "timonwong";
+            version = "0.18.9"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-D7lRMmmDgAHKPVyZMC06zNef8UtrgNEE+m0mTbIuc1A=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "vscode-fileutils";
+            publisher = "sleistner";
+            version = "3.5.0"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-ulsa8nGNoFRUMVFXN00c9JvF2WeorAhbiCOLAJULVvo=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "vscode-eslint";
+            publisher = "dbaeumer";
+            version = "2.2.2"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-llalyQXl+k/ugZq+Ti9mApHRqAGu6QyoMP51GtZnRJ4=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "vscode-docker";
+            publisher = "ms-azuretools";
+            version = "1.20.0"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-i3gYTP76YEDItG2oXR9pEXuGv0qmyf1Xv6HQvDBEOyg=";
+          }
+          {
+            # taken from the marketplace unique id: <publisher>.<name>
+            name = "path-autocomplete";
+            publisher = "ionutvmi";
+            version = "1.19.1"; #taken from marketplace UI
+            # install without this value, look at error message for calculated sha256.
+            sha256 = "sha256-0hnmCnGgcflA8zFQvaE6iB8eWZIBJZH2plUr40Avtdk=";
+          }
+          ];
         };
 
       };
