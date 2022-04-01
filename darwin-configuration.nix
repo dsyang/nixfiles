@@ -67,7 +67,7 @@
             theme = "dsyang";
 
             extraConfig = ''
-            zstyle :omz:plugins:ssh-agent lifetime 72h
+            zstyle :omz:plugins:ssh-agent lifetime 1600h
             '';
             plugins = [
               "ssh-agent"
