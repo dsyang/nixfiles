@@ -122,6 +122,8 @@
           ${(builtins.readFile ./zshrc-snippets/ruby.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/misc-functions.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/notion.zsh)}
           '';
         };
 

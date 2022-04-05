@@ -1,0 +1,1 @@
+eval "$(notion completion --install)"
