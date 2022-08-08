@@ -29,6 +29,8 @@
         deno
         m-cli
         jq
+        nodejs
+        yarn
       ] ++ lib.optionals stdenv.isDarwin [
         cocoapods
         m-cli # useful macOS CLI commands
