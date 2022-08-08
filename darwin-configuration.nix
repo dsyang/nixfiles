@@ -134,12 +134,15 @@
             "files.trimTrailingWhitespace" = true;
             "typescript.tsdk" = "./node_modules/typescript/lib";
             "[typescript]" = {
-              "editor.defaultFormatter"= "esbenp.prettier-vscode";
+              "editor.defaultFormatter" = "esbenp.prettier-vscode";
               "editor.formatOnSave" = true;
             };
             "[typescriptreact]" = {
-              "editor.defaultFormatter"= "esbenp.prettier-vscode";
+              "editor.defaultFormatter" = "esbenp.prettier-vscode";
               "editor.formatOnSave" = true;
+            };
+            "[json]" = {
+              "editor.defaultFormatter" = "esbenp.prettier-vscode";
             };
           };
 
