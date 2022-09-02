@@ -31,6 +31,16 @@
         jq
         nodejs
         yarn
+        #golang but only when it's upgraded to 1.19
+        # go
+        # gotools
+        # gopls
+        # go-outline
+        # gocode
+        # gopkgs
+        # gocode-gomod
+        # godef
+        # golint
       ] ++ lib.optionals stdenv.isDarwin [
         cocoapods
         m-cli # useful macOS CLI commands
@@ -107,6 +117,10 @@
           '';
 
           initExtra = ''
+          if [ -x /usr/libexec/path_helper ]; then
+            eval `/usr/libexec/path_helper -s`
+          fi
+
           ${(builtins.readFile ./zshrc-snippets/homebrew.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/java-android.zsh)}
@@ -118,6 +132,8 @@
           # $ {(builtins.readFile ./zshrc-snippets/ocaml.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/vscode.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/golang.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/nix.zsh)}
 
