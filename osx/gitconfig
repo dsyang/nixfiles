@@ -15,7 +15,7 @@
 	histall = log --pretty=format:\" %h %ad | %s%d [%an]\" --graph --date=short
 	type = cat-tile -t
 	dump = cat-file -p
-  sl = log --pretty=format:\" %h %ad | %s%d [%an]\" --graph --date=short -n 15
+    sl = log --pretty=format:\" %h %ad | %s%d [%an]\" --graph --date=short -n 15
 [core]
 	pager = less -X -F
 [credential]
@@ -24,3 +24,5 @@
   ff = only
 [init]
 	defaultBranch = main
+[push]
+	default = current

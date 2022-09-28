@@ -29,6 +29,7 @@
         deno
         m-cli
         jq
+        gh
       ] ++ lib.optionals stdenv.isDarwin [
         cocoapods
         m-cli # useful macOS CLI commands
@@ -56,6 +57,14 @@
 
         autojump = {
           enable = true;
+        };
+
+        gh = {
+          enable = true;
+          settings = {
+            git_protocol = "ssh";
+            prompt = "enabled";
+          };
         };
 
         zsh = {
