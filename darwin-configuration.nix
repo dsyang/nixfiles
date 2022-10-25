@@ -127,7 +127,7 @@
 
           # $ {(builtins.readFile ./zshrc-snippets/rust.zsh)}
 
-          # $ {(builtins.readFile ./zshrc-snippets/flutter.zsh)}
+          ${(builtins.readFile ./zshrc-snippets/flutter.zsh)}
 
           # $ {(builtins.readFile ./zshrc-snippets/ocaml.zsh)}
 

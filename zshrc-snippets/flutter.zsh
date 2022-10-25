@@ -1,4 +1,4 @@
 ###########
 ## Flutter
 ###########
-PATH="/Users/dsyang/bin/flutter/bin:$PATH"
+export PATH="/Users/dsyang/bin/flutter/bin:$PATH"
