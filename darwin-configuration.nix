@@ -162,6 +162,18 @@
             "[json]" = {
               "editor.defaultFormatter" = "esbenp.prettier-vscode";
             };
+            "[dart]" = {
+              "editor.formatOnSave" = true;
+              "editor.formatOnType" = true;
+              "editor.rulers" = [
+                80
+              ];
+              "editor.selectionHighlight" = false;
+              "editor.suggest.snippetsPreventQuickSuggestions" = false;
+              "editor.suggestSelection" = "first";
+              "editor.tabCompletion" = "onlySnippets";
+              "editor.wordBasedSuggestions" = false;
+            };
           };
 
           keybindings = [
@@ -312,6 +324,24 @@
             # install without this value, look at error message for calculated sha256.
             sha256 = "sha256-0hnmCnGgcflA8zFQvaE6iB8eWZIBJZH2plUr40Avtdk=";
           }
+          # flutter packages like this don't work because flutter doctor expects the version number to exist in the
+          # extension directory name. Install it normally instead.
+          # {
+          #   # taken from the marketplace unique id: <publisher>.<name> dart-code.dart-code
+          #   name = "dart-code";
+          #   publisher = "dart-code";
+          #   version = "3.50.0"; #taken from marketplace UI
+          #   # install without this value, look at error message for calculated sha256.
+          #   sha256 = "sha256-vdECvW4BfuT3H6GD2cH7lVW0f5591pKjXsWyJzzpHYA=";
+          # }
+          # {
+          #   # taken from the marketplace unique id: <publisher>.<name>
+          #   name = "flutter";
+          #   publisher = "dart-code";
+          #   version = "3.50.0"; #taken from marketplace UI
+          #   # install without this value, look at error message for calculated sha256.
+          #   sha256 = "sha256-2Mi0BWXfO73BBIZIRJMaQyml+jXBI9d7By+vx9Rg+pE=";
+          # }
           ];
         };
 
