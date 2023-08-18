@@ -104,6 +104,12 @@
             ll = "ls -alh";
             freespace = "df -H";
             sftp = "rlwrap sftp";
+            hg = "echo 'sapling\n' && sl";
+            gsl = "git sl";
+            gst = "git st";
+            gad = "git add";
+            gch = "git switch";
+            gnew = "git switch -c";
           };
 
           initExtraFirst = ''
@@ -133,6 +139,8 @@
           ${(builtins.readFile ./zshrc-snippets/misc-functions.zsh)}
 
           ${(builtins.readFile ./zshrc-snippets/notion.zsh)}
+
+          ${(builtins.readFile ./zshrc-snippets/nocommit.notion.zsh)}
           '';
         };
 
@@ -142,8 +150,6 @@
           enable = true;
 
           userSettings = {
-            "files.trimTrailingWhitespace" = true;
-            "typescript.tsdk" = "./node_modules/typescript/lib";
             "[typescript]" = {
               "editor.defaultFormatter" = "esbenp.prettier-vscode";
               "editor.formatOnSave" = true;
@@ -155,6 +161,8 @@
             "[json]" = {
               "editor.defaultFormatter" = "esbenp.prettier-vscode";
             };
+            "files.trimTrailingWhitespace" = true;
+            "typescript.tsdk" = "./node_modules/typescript/lib";
           };
 
           keybindings = [
