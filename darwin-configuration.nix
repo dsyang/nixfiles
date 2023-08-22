@@ -110,6 +110,8 @@
             gad = "git add";
             gch = "git switch";
             gnew = "git switch -c";
+            grei = "git rebase -i";
+            gmain = "git co main; git pull origin main";
           };
 
           initExtraFirst = ''
@@ -196,6 +198,10 @@
             {
               "key" = "ctrl+y";
               "command" = "editor.action.clipboardPasteAction";
+            }
+            {
+              "key" =  "ctrl+x space";
+              "command" =  "workbench.action.gotoLine";
             }
           ];
 
