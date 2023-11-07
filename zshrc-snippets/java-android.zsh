@@ -19,6 +19,10 @@ export ANDROID_HOME=${ANDROID_SDK}
 export PATH="$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools"
 export PATH="/Users/dsyang/bin/build-tools:$PATH"
 
+##########
+## gradle
+##########
+export GRADLE_USER_HOME=/Users/dsyang/.gradle
 
 function android_reverse_ports() {
 

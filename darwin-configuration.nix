@@ -361,7 +361,7 @@
     };
 
     defaults = {
-      LaunchServices.LSQuarantine = false;
+      # LaunchServices.LSQuarantine = false;
 
       NSGlobalDomain = {
         PMPrintingExpandedStateForPrint = true;
