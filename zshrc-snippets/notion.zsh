@@ -11,3 +11,8 @@ eval "$(pyenv init -)"
 eval "$(direnv hook zsh)"
 
 source $NOTION_HOME/.notionpr/mobile-team-pr-aliases.sh
+
+## Dont forget to create a nocommit.notion.zsh
+# export BENCHMARK_USER_ID
+# export BENCHMARK_SPACE_ID
+# export BENCHMARK_TOKEN_V2
