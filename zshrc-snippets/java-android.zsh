@@ -2,14 +2,15 @@
 #######
 ## java (embeded in Android Studio electric eel+)
 #######
-export JAVA_HOME='/Applications/Android Studio.app/Contents/jbr/Contents/Home'
+export JAVA_HOME="$(/usr/libexec/java_home)"
 export PATH="${JAVA_HOME}/bin:${PATH}"
 
 ##########
 ## Kotlin
 ##########
-export KOTLIN_HOME="/Applications/Android Studio.app/Contents/plugins/Kotlin/kotlinc"
-export PATH="${KOTLIN_HOME}/bin:${PATH}"
+# no chmod +x possible with most recent Android Studio
+#export KOTLIN_HOME="/Applications/Android Studio.app/Contents/plugins/Kotlin/kotlinc"
+#export PATH="${KOTLIN_HOME}/bin:${PATH}"
 
 ##########
 ## android
@@ -39,3 +40,6 @@ function android_reverse_ports() {
       adb -s "$device_id" reverse tcp:3003 tcp:3003
   done
 }
+
+alias gwlint="./gradlew formatKotlin"
+alias gw="./gradlew"
