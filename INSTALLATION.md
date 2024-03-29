@@ -57,3 +57,5 @@
 	- Follow dev getting started
 	- setup localhost before setting up mobile
 		- Android studio, 16GB
+	- Reset this repo's upstream to use ssh link
+		`git remote set-url origin git@github.com:dsyang/nixfiles.git`
