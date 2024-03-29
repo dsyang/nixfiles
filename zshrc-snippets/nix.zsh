@@ -1,7 +1,6 @@
 ###########
 ## nix-darwin install
 ###########
-export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:$NIX_PATH
 
 ###########
 ## nix home manager

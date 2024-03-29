@@ -2,11 +2,9 @@
 
 {
   # Point darwin to a checkout of the dsyang/nix-darwin repo
-  nix.nixPath = [ {"darwin" = "/Users/dsyang/.nix-defexpr/darwin";} ];
 
   imports = [
     <home-manager/nix-darwin>
-    ./osx/patches/security/pam.nix
   ];
 
   # Home-manager setup: my user-specific files
@@ -25,7 +23,7 @@
       home.packages = with pkgs; [
         httpie
         tmux
-        exa
+        eza
         deno
         m-cli
         jq
@@ -338,7 +336,7 @@
     ];
 
   # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
+  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin-configuration.nix
   environment.darwinConfig = "$HOME/.config/nixpkgs/darwin-configuration.nix";
 
   # Auto upgrade nix package and the daemon service.
@@ -387,7 +385,7 @@
       dock = {
         # need to `killall Dock` for new settings to apply
         autohide = true;
-        expose-animation-duration = "0.1";
+        expose-animation-duration = 0.1;
         expose-group-by-app = false;
         mru-spaces = false;
         orientation = "bottom";

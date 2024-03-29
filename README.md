@@ -10,6 +10,7 @@ Using nix for my dotfiles and programs
 
 # Getting Started with `nix`, `nix-darwin`, and `home-manager` on apple silicon.
 Main reference: https://gist.github.com/mandrean/65108e0898629e20afe1002d8bf4f223
+
 ## 0. Clone this repo with included git
 symlink repo into ~/.config/nixpkgs
 `ln -s /Users/dsyang/nixfiles /Users/dsyang/.config/nixpkgs`
@@ -60,7 +61,20 @@ NOTE: as of now, `home-manager` isn't used to configure anything anymore. See th
 source: https://opensourcelibs.com/lib/nix-darwin
 `nix-darwin` lets you configure your macos system let changing preferences in finder & more. It includes modules for configuring other nix things like `home-manager`
 
-- Use from-source install to get additional finder options until they are upstreamed: https://github.com/dsyang/nix-darwin#manual-install
+- Add Nixpkgs if you don't see it 
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+Nix-channel --update
+
+- Add Darwin channel
+nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
+nix-channel --update
+
+- Use default installer since PR has been upstreamed
+nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
+./result/bin/darwin-installer
+
+- Don't forget to start a new shell or source /etc/static/bashrc.
+
 
 ## 3.2 verify installation:
 `darwin-rebuild switch`
@@ -69,6 +83,8 @@ if you hit `error: not linking environment.etc."nix/nix.conf" because /etc/nix/n
 
 `sudo cp /etc/nix/nix.conf /etc/nix/nix.conf-before-nix-darwin; sudo rm /etc/nix/nix.conf`
 
+Run this command to install the configuration.
+`darwin-rebuild switch -I darwin-config=/Users/dsyang/.config/nixpkgs/darwin-configuration.nix`
 
 ## 3.3 Cheatsheet
 - `darwin-rebuild switch` to rebuild env
