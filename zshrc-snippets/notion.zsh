@@ -16,3 +16,27 @@ source $NOTION_HOME/.notionpr/mobile-team-pr-aliases.sh
 # export BENCHMARK_USER_ID
 # export BENCHMARK_SPACE_ID
 # export BENCHMARK_TOKEN_V2
+
+## Apps
+# 1pass
+# Android Studio
+# BetterTouchTool
+# Chrome
+# Clipy
+# DaisyDisk
+# DBeaver
+# Dropbox?x
+# Handbrake
+# iStat Menus?x
+# Kap
+# KeyCastr?
+# Mullvad VPN
+# Open VPN
+# Pixelmator
+# Slack
+# Sublime Text
+# Sublime Merge
+# Testflight
+# VsCode
+# XCode
+# Zoom
