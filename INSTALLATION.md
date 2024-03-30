@@ -1,6 +1,6 @@
 # All the install steps
 
-1. Set trackpad scrolling to natural
+1. Set trackpad scrolling to natural. speed to fastest-2.
 2. Turn on dark mode
 3. Install `git`
 4. Follow `README.md` to install nix configuration
@@ -14,6 +14,7 @@
 	- Remove all items from Dock
 	- mkdir ~/Sandbox.
 	- Drag ~/Sandbox and ~/. into sidebar
+	- Remove Recents from sidebar
 8. Install homebrew - https://brew.sh
 9. Kandji apps:
 	1pass - already installed
@@ -57,5 +58,7 @@
 	- Follow dev getting started
 	- setup localhost before setting up mobile
 		- Android studio, 16GB
+		- brew install scrcpy
+		- brew install bundletool
 	- Reset this repo's upstream to use ssh link
 		`git remote set-url origin git@github.com:dsyang/nixfiles.git`
