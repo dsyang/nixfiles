@@ -1,6 +1,7 @@
 # All the install steps
 
 1. Set trackpad scrolling to natural. speed to fastest-2.
+	- Set mouse tracking and scroll speed to the same level.
 2. Turn on dark mode
 3. Install `git`
 4. Follow `README.md` to install nix configuration
