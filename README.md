@@ -25,7 +25,7 @@ setup nix path stuff in ~/.zshrc:
 ## 1.1 Install nix:
 source: https://nix.dev/tutorials/install-nix#macos
 
-`sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume --daemon`
+`sh <(curl -L https://nixos.org/nix/install) /dev/disk3s7--darwin-use-unencrypted-nix-store-volume --daemon`
 
 This installs nix in multi-user mode which will create users like _nixbld[1..32]. Important to note should you choose to uninstall nix.
 
@@ -34,13 +34,14 @@ This installs nix in multi-user mode which will create users like _nixbld[1..32]
 - `nix-shell` starts a shell with a particular config
 - `-p nix-info` config is a `nix-info` package.
 - `--run ...` run the following prompt. Without this. `nix-shell` drops you into a repl with the package installed.
+- If there's problems with a ca cert, it's probably because of a reinstall. check out https://discourse.nixos.org/t/ssl-ca-cert-error-on-macos/31171/4
 
 ## 2. Install `home-manager`
 source: https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix
 `home-manager` is something that lets you use nix setup user-specific configs like dotfiles.
 
-- `nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager`
-- `nix-channel --update`
+- `sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager`
+- `sudo nix-channel --update`
 - `nix-shell '<home-manager>' -A install`
 - `home-manager switch` must call this to rebuild the system (until nix-darwin installed)
 
@@ -61,17 +62,16 @@ NOTE: as of now, `home-manager` isn't used to configure anything anymore. See th
 source: https://opensourcelibs.com/lib/nix-darwin
 `nix-darwin` lets you configure your macos system let changing preferences in finder & more. It includes modules for configuring other nix things like `home-manager`
 
-- Add Nixpkgs if you don't see it 
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-Nix-channel --update
+- Add Nixpkgs if you don't see it
+sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+sudo nix-channel --update
 
 - Add Darwin channel
-nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
-nix-channel --update
+sudo nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
+sudo nix-channel --update
 
 - Use default installer since PR has been upstreamed
-nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-./result/bin/darwin-installer
+nix-build '<darwin>' -A darwin-rebuild
 
 - Don't forget to start a new shell or source /etc/static/bashrc.
 
