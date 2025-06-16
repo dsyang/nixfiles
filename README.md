@@ -84,7 +84,9 @@ if you hit `error: not linking environment.etc."nix/nix.conf" because /etc/nix/n
 `sudo cp /etc/nix/nix.conf /etc/nix/nix.conf-before-nix-darwin; sudo rm /etc/nix/nix.conf`
 
 Run this command to install the configuration.
-`darwin-rebuild switch -I darwin-config=/Users/dsyang/.config/nixpkgs/darwin-configuration.nix`
+`sudo darwin-rebuild switch -I darwin-config=/Users/dsyang/.config/nixpkgs/darwin-configuration.nix`
+
+if you hit problems with not finding `<darwin>`, it could be because sudo doesn't have access to the nix channels. do `nix-channel` above with sudo in front of it.
 
 ## 3.3 Cheatsheet
 - `darwin-rebuild switch` to rebuild env

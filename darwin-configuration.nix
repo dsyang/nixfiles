@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Point darwin to a checkout of the dsyang/nix-darwin repo
@@ -110,36 +110,26 @@
               gmain = "git co main; git pull origin main";
             };
 
-            initExtraFirst = ''
+            initContent = lib.mkMerge [
+              (lib.mkBefore ''
               export DISABLE_AUTO_TITLE="true"
               export COMPLETION_WAITING_DOTS="true"
               export EDITOR="vim"
               PATH="/Users/dsyang/bin:$PATH"
-            '';
+              '')
 
-            initExtra = ''
-              ${(builtins.readFile ./zshrc-snippets/homebrew.zsh)}
-
-              ${(builtins.readFile ./zshrc-snippets/java-android.zsh)}
-
-              # $ {(builtins.readFile ./zshrc-snippets/rust.zsh)}
-
-              # $ {(builtins.readFile ./zshrc-snippets/flutter.zsh)}
-
-              # $ {(builtins.readFile ./zshrc-snippets/ocaml.zsh)}
-
-              ${(builtins.readFile ./zshrc-snippets/vscode.zsh)}
-
-              ${(builtins.readFile ./zshrc-snippets/nix.zsh)}
-
-              ${(builtins.readFile ./zshrc-snippets/ruby.zsh)}
-
-              ${(builtins.readFile ./zshrc-snippets/misc-functions.zsh)}
-
-              ${(builtins.readFile ./zshrc-snippets/notion.zsh)}
-
-              ${(builtins.readFile ./zshrc-snippets/nocommit.notion.zsh)}
-            '';
+              (builtins.readFile ./zshrc-snippets/homebrew.zsh)
+              (builtins.readFile ./zshrc-snippets/java-android.zsh)
+#              (builtins.readFile ./zshrc-snippets/rust.zsh)
+#              (builtins.readFile ./zshrc-snippets/flutter.zsh)
+#              (builtins.readFile ./zshrc-snippets/ocaml.zsh)
+              (builtins.readFile ./zshrc-snippets/vscode.zsh)
+              (builtins.readFile ./zshrc-snippets/nix.zsh)
+              (builtins.readFile ./zshrc-snippets/ruby.zsh)
+              (builtins.readFile ./zshrc-snippets/misc-functions.zsh)
+              (builtins.readFile ./zshrc-snippets/notion.zsh)
+              (builtins.readFile ./zshrc-snippets/nocommit.notion.zsh)
+            ];
           };
 
           vscode = {
