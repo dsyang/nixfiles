@@ -133,7 +133,7 @@
             ];
           };
 
-          vscode = {
+          /*vscode = {
             # Want to only use this to control configuration.
             # Still need to download vscode manually
             enable = true;
@@ -311,7 +311,7 @@
               };
               };
             };
-          };
+          };*/
         };
       };
 
