@@ -2,7 +2,8 @@
 #######
 ## java (embeded in Android Studio electric eel+)
 #######
-export JAVA_HOME="$(/usr/libexec/java_home)"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
 export PATH="${JAVA_HOME}/bin:${PATH}"
 
 ##########

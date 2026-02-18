@@ -10,7 +10,9 @@ export NOTION_HOME="/Users/dsyang/notion-next"
 eval "$(pyenv init -)"
 eval "$(direnv hook zsh)"
 
-source $NOTION_HOME/.notionpr/mobile-team-pr-aliases.sh
+export RIPGREP_CONFIG_PATH="/Users/dsyang/notion-next/.ripgreprc"
+
+export PATH="/Users/dsyang/.local/bin:/Users/dsyang/.git-ai/bin:$PATH"
 
 ## Dont forget to create a nocommit.notion.zsh
 # export BENCHMARK_USER_ID
@@ -18,7 +20,7 @@ source $NOTION_HOME/.notionpr/mobile-team-pr-aliases.sh
 # export BENCHMARK_TOKEN_V2
 
 ## Apps
-# 1pass
+# 1pass'-
 # Android Studio
 # BetterTouchTool
 # Chrome

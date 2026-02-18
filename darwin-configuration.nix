@@ -97,6 +97,7 @@
             };
 
             shellAliases = {
+              claude = "/Users/dsyang/.local/bin/claude";
               ll = "ls -alh";
               freespace = "df -H";
               sftp = "rlwrap sftp";
@@ -120,7 +121,7 @@
 
               (builtins.readFile ./zshrc-snippets/homebrew.zsh)
               (builtins.readFile ./zshrc-snippets/java-android.zsh)
-#              (builtins.readFile ./zshrc-snippets/rust.zsh)
+              (builtins.readFile ./zshrc-snippets/rust.zsh)
 #              (builtins.readFile ./zshrc-snippets/flutter.zsh)
 #              (builtins.readFile ./zshrc-snippets/ocaml.zsh)
               (builtins.readFile ./zshrc-snippets/vscode.zsh)
