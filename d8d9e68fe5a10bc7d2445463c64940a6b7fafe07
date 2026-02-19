@@ -1,0 +1,57 @@
+zshrc-snippets/ruby.zsh
+  a88dc4b943f4dd33 1-11
+zshrc-snippets/prompt.zsh
+  a88dc4b943f4dd33 1-79
+zshrc-snippets/nix.zsh
+  a88dc4b943f4dd33 6
+zshrc-snippets/notion.zsh
+  a88dc4b943f4dd33 1-8,17-27
+darwin-configuration.nix
+  a88dc4b943f4dd33 69-72,74,84,112-117,120
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.4",
+  "base_commit_sha": "d8d9e68fe5a10bc7d2445463c64940a6b7fafe07",
+  "prompts": {
+    "926e29f994febe16": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3a5ea704-a4b3-4303-930b-9066e1d03afd",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dan Yang <dan@makenotion.com>",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 2,
+      "accepted_lines": 0,
+      "overriden_lines": 0
+    },
+    "a88dc4b943f4dd33": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f0b590ca-9020-4705-bf6c-daeb8163d60b",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dan Yang <dan@makenotion.com>",
+      "messages": [],
+      "total_additions": 123,
+      "total_deletions": 20,
+      "accepted_lines": 123,
+      "overriden_lines": 0
+    },
+    "ae142ccbd1714834": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bdd4271c-13c1-42e7-9a85-7a17ca4ff857",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dan Yang <dan@makenotion.com>",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 19,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
