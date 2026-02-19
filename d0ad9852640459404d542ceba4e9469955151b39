@@ -1,0 +1,25 @@
+zshrc-snippets/notion.zsh
+  ae142ccbd1714834 34-45
+darwin-configuration.nix
+  ae142ccbd1714834 92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.4",
+  "base_commit_sha": "d0ad9852640459404d542ceba4e9469955151b39",
+  "prompts": {
+    "ae142ccbd1714834": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bdd4271c-13c1-42e7-9a85-7a17ca4ff857",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dan Yang <dan@makenotion.com>",
+      "messages": [],
+      "total_additions": 13,
+      "total_deletions": 1,
+      "accepted_lines": 13,
+      "overriden_lines": 0
+    }
+  }
+}
