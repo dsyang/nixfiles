@@ -1,4 +1,11 @@
-eval "$(notion completion --install)"
+# --- Cached notion completion (saves ~180ms) ---
+_notion_comp_cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/notion_completion.zsh"
+if [[ ! -s "$_notion_comp_cache" ]]; then
+  mkdir -p "${_notion_comp_cache:h}"
+  notion completion --install > "$_notion_comp_cache" 2>/dev/null
+fi
+source "$_notion_comp_cache" 2>/dev/null
+unset _notion_comp_cache
 
 alias -g lintcommit="./gradlew formatkotlin && git commit -a --allow-empty -m 'ran formatkotlin'"
 alias -g npr="notion pr --findTask=false"
@@ -7,7 +14,17 @@ alias -g npr="notion pr --findTask=false"
 export NOTION_NO_PREPUSH=true
 export NOTION_HOME="/Users/dsyang/notion-next"
 
-eval "$(pyenv init -)"
+# --- Lazy-load pyenv (saves ~240ms) ---
+_init_pyenv() {
+  unfunction pyenv python python3 pip pip3 2>/dev/null
+  eval "$(command pyenv init -)"
+}
+pyenv() { _init_pyenv && pyenv "$@" }
+python() { _init_pyenv && python "$@" }
+python3() { _init_pyenv && python3 "$@" }
+pip() { _init_pyenv && pip "$@" }
+pip3() { _init_pyenv && pip3 "$@" }
+
 eval "$(direnv hook zsh)"
 
 export RIPGREP_CONFIG_PATH="/Users/dsyang/notion-next/.ripgreprc"

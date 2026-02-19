@@ -3,6 +3,5 @@
 ###########
 
 ###########
-## nix home manager
+## nix home manager (sourced in .zshenv already)
 ###########
-source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh

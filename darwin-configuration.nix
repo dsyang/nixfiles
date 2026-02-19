@@ -66,20 +66,12 @@
           zsh = {
             enable = true;
 
-            oh-my-zsh = {
-              enable = true;
-              custom = "/Users/dsyang/.config/nixpkgs/oh-my-zsh-custom/";
-              theme = "dsyang";
+            profileExtra = ''
+              # Skip /etc/zshrc which runs redundant compinit + promptinit
+              export NOSYSZSHRC=1
+            '';
 
-              extraConfig = ''
-                zstyle :omz:plugins:ssh-agent lifetime 1600h
-              '';
-              plugins = [
-                "ssh-agent"
-                "git"
-                "autojump"
-              ];
-            };
+            completionInit = "autoload -Uz compinit && compinit -C";
 
             history = {
               expireDuplicatesFirst = true;
@@ -89,7 +81,7 @@
             };
 
             localVariables = {
-              HOSTNAME = "`hostname`";
+              HOSTNAME = "\${HOST}";
               LC_ALL = "en_US.UTF-8";
               LANG = "en_US.UTF-8";
               LC_CTYPE = "en_US.UTF-8";
@@ -117,8 +109,15 @@
               export COMPLETION_WAITING_DOTS="true"
               export EDITOR="vim"
               PATH="/Users/dsyang/bin:$PATH"
+
+              # Emacs keybindings (was in /etc/zshrc which we skip via NOSYSZSHRC)
+              bindkey -e
+
+              # Set BREW_PREFIX to avoid slow `brew --prefix` call inside autojump.zsh
+              export BREW_PREFIX="''${HOMEBREW_PREFIX:-/opt/homebrew}"
               '')
 
+              (builtins.readFile ./zshrc-snippets/prompt.zsh)
               (builtins.readFile ./zshrc-snippets/homebrew.zsh)
               (builtins.readFile ./zshrc-snippets/java-android.zsh)
               (builtins.readFile ./zshrc-snippets/rust.zsh)
@@ -310,8 +309,8 @@
                 ];
               };
               };
-            };
-          };*/
+            };*/
+          };
         };
       };
 
