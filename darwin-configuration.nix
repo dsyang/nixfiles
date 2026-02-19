@@ -89,7 +89,7 @@
             };
 
             shellAliases = {
-              claude = "/Users/dsyang/.local/bin/claude";
+              claude = "/Users/dsyang/.local/bin/mav";
               ll = "ls -alh";
               freespace = "df -H";
               sftp = "rlwrap sftp";

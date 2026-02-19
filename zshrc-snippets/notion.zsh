@@ -31,6 +31,18 @@ export RIPGREP_CONFIG_PATH="/Users/dsyang/notion-next/.ripgreprc"
 
 export PATH="/Users/dsyang/.local/bin:/Users/dsyang/.git-ai/bin:$PATH"
 
+# --- Claude Code planning session with Ghostty theme swap ---
+plan() {
+  local original_dir="$PWD"
+  cd /Users/dsyang/notion-next-planning || return 1
+  printf '\e]133;P;config=theme=Atom One Dark\e\\'
+  command claude --permission-mode plan "$@"
+  local exit_code=$?
+  printf '\e]133;P;config=theme=Ghost\e\\'
+  cd "$original_dir"
+  return $exit_code
+}
+
 ## Dont forget to create a nocommit.notion.zsh
 # export BENCHMARK_USER_ID
 # export BENCHMARK_SPACE_ID
