@@ -32,7 +32,7 @@ _git_async_precmd() {
   # Fast check: walk up to find .git without forking
   local dir="$PWD"
   while [[ "$dir" != "/" ]]; do
-    [[ -d "$dir/.git" ]] && break
+    [[ -d "$dir/.git" || -f "$dir/.git" ]] && break
     dir="${dir:h}"
   done
   [[ "$dir" == "/" ]] && return

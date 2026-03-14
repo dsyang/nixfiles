@@ -100,7 +100,7 @@
               gch = "git switch";
               gnew = "git switch -c";
               grei = "git rebase -i --update-refs";
-              gmain = "git co main; git pull origin main";
+              gmain = "git co main; git pull origin main; git co -";
             };
 
             initContent = lib.mkMerge [
