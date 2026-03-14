@@ -1,0 +1,23 @@
+zshrc-snippets/prompt.zsh
+  5aeb25d3af99b384 35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "8569e117231fc4e9f3d80f9c10cb154cb39fe9e2",
+  "prompts": {
+    "5aeb25d3af99b384": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4a90d189-abcd-416d-87d0-47e04598ce19",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dan Yang <dan@makenotion.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
