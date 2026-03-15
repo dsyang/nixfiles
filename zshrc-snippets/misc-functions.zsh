@@ -7,3 +7,8 @@ fix-uuid() {
 unfix-uuid() {
   pbpaste | sed 's|-||g' | tee /dev/stderr | pbcopy
 }
+
+# Run claude with personal config instead of work
+personalclaude() {
+  CLAUDE_CONFIG_DIR=~/personal/.claude command claude --dangerously-skip-permissions "$@"
+}

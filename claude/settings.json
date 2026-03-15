@@ -1,0 +1,10 @@
+{
+  "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/dsyang/.claude/statusline-command.sh"
+  },
+  "voiceEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
+  "effortLevel": "high"
+}
