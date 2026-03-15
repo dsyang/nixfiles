@@ -1,0 +1,23 @@
+zshrc-snippets/misc-functions.zsh
+  53c5b60001362515 9-13
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.12",
+  "base_commit_sha": "806fdf419730e599777881727cb8e2be7ea47638",
+  "prompts": {
+    "53c5b60001362515": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6bdb992f-55e6-4c2e-b3e6-314dc78e49a4",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Dan Yang <dan@makenotion.com>",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 1,
+      "accepted_lines": 5,
+      "overriden_lines": 0
+    }
+  }
+}
