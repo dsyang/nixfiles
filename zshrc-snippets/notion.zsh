@@ -27,8 +27,6 @@ pip3() { _init_pyenv && pip3 "$@" }
 
 eval "$(direnv hook zsh)"
 
-export RIPGREP_CONFIG_PATH="/Users/dsyang/notion-next/.ripgreprc"
-
 export PATH="/Users/dsyang/.local/bin:/Users/dsyang/.git-ai/bin:$PATH"
 
 # --- Claude Code planning session with Ghostty theme swap ---
