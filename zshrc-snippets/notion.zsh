@@ -7,8 +7,7 @@ fi
 source "$_notion_comp_cache" 2>/dev/null
 unset _notion_comp_cache
 
-alias -g lintcommit="./gradlew formatkotlin && git commit -a --allow-empty -m 'ran formatkotlin'"
-alias -g npr="notion pr --findTask=false"
+alias boxy="notion boxy"
 
 
 export NOTION_NO_PREPUSH=true
@@ -27,19 +26,20 @@ pip3() { _init_pyenv && pip3 "$@" }
 
 eval "$(direnv hook zsh)"
 
-export PATH="/Users/dsyang/.local/bin:/Users/dsyang/.git-ai/bin:$PATH"
-
-# --- Claude Code planning session with Ghostty theme swap ---
-plan() {
-  local original_dir="$PWD"
-  cd /Users/dsyang/notion-next-planning || return 1
-  printf '\e]133;P;config=theme=Atom One Dark\e\\'
-  command claude --permission-mode plan "$@"
-  local exit_code=$?
-  printf '\e]133;P;config=theme=Ghost\e\\'
-  cd "$original_dir"
-  return $exit_code
-}
+# Lines below match the literal strings `notion install` greps for in ~/.zshrc,
+# so the install script no-ops these steps instead of trying to append (which
+# fails because ~/.zshrc is a read-only Nix store symlink).
+export PATH="$HOME/.jenv/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+export PATH="${CARGO_HOME:-$HOME/.cargo}/bin:$PATH"
+if command -v rv >/dev/null 2>&1; then eval "$(rv shell init zsh)"; fi
+eval "$(jenv init -)"
+# Point ripgrep at our own config (managed via ~/nixfiles/osx/ripgreprc). It
+# contains the "# Added by notion install" marker, so `notion install`'s
+# setup_ripgrep_config sees an existing config with the marker and returns
+# silently — works regardless of which worktree we run install from.
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 ## Dont forget to create a nocommit.notion.zsh
 # export BENCHMARK_USER_ID

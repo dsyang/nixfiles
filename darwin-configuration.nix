@@ -40,6 +40,7 @@
           ".tmux.d".source = ./osx/tmux/tmux.d;
           ".tmux.conf".source = ./osx/tmux/tmux.conf;
           ".terminfo/78/xterm-kitty".source = ./osx/xterm-kitty-terminfo;
+          ".ripgreprc".source = ./osx/ripgreprc;
         };
 
         # This value determines the Home Manager release that your
@@ -90,6 +91,7 @@
 
             shellAliases = {
               claude = "/Users/dsyang/.local/bin/mav";
+              codex = "/Users/dsyang/.local/bin/iceman";
               ll = "ls -alh";
               freespace = "df -H";
               sftp = "rlwrap sftp";

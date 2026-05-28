@@ -29,6 +29,9 @@ TRAPUSR1() { _git_prompt_refresh }
 
 _git_async_precmd() {
   _git_prompt_result=""
+  # Skip git probing in secondary project panes — the project label is already
+  # implied by the window and the main pane shows the branch.
+  [[ -n "$WEZTERM_PROJECT_PANE" ]] && return
   # Fast check: walk up to find .git without forking
   local dir="$PWD"
   while [[ "$dir" != "/" ]]; do

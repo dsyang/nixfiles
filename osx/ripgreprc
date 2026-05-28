@@ -1,0 +1,3 @@
+# Added by notion install
+--type-add=jsx:*.jsx
+--type-add=tsx:*.tsx
