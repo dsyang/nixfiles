@@ -41,6 +41,18 @@ eval "$(jenv init -)"
 # silently — works regardless of which worktree we run install from.
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
+# >>> nomo completions >>>
+if [[ -d '/Users/dsyang/.zfunc' ]]; then
+        fpath=('/Users/dsyang/.zfunc' $fpath)
+fi
+autoload -Uz compinit
+compinit
+# <<< nomo completions <<<
+ ### From notion android setup
+export ANDROID_HOME=/Users/dsyang/Library/Android/sdk
+export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
+ ### notion android: trust remote emulator adb keys
+export ADB_VENDOR_KEYS="${ADB_VENDOR_KEYS:+$ADB_VENDOR_KEYS:}$HOME/.android/notion-adbkeys"
 ## Dont forget to create a nocommit.notion.zsh
 # export BENCHMARK_USER_ID
 # export BENCHMARK_SPACE_ID
