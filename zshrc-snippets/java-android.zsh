@@ -1,18 +1,3 @@
-#######
-## java (embeded in Android Studio electric eel+)
-#######
-# export JAVA_HOME="$(/usr/libexec/java_home)"
-# managed by jenv
-# export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
-# export PATH="${JAVA_HOME}/bin:${PATH}"
-
-##########
-## Kotlin
-##########
-# no chmod +x possible with most recent Android Studio
-#export KOTLIN_HOME="/Applications/Android Studio.app/Contents/plugins/Kotlin/kotlinc"
-#export PATH="${KOTLIN_HOME}/bin:${PATH}"
-
 ##########
 ## android
 ##########

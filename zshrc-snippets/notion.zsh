@@ -53,31 +53,5 @@ export ANDROID_HOME=/Users/dsyang/Library/Android/sdk
 export PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/latest/bin"
  ### notion android: trust remote emulator adb keys
 export ADB_VENDOR_KEYS="${ADB_VENDOR_KEYS:+$ADB_VENDOR_KEYS:}$HOME/.android/notion-adbkeys"
-## Dont forget to create a nocommit.notion.zsh
-# export BENCHMARK_USER_ID
-# export BENCHMARK_SPACE_ID
-# export BENCHMARK_TOKEN_V2
-
-## Apps
-# 1pass'-
-# Android Studio
-# BetterTouchTool
-# Chrome
-# Clipy
-# DaisyDisk
-# DBeaver
-# Dropbox?x
-# Handbrake
-# iStat Menus?x
-# Kap
-# KeyCastr?
-# Mullvad VPN
-# Open VPN
-# Pixelmator
-# Slack
-# Sublime Text
-# Sublime Merge
-# Testflight
-# VsCode
-# XCode
-# Zoom
+# Machine-local secrets (BENCHMARK_USER_ID/SPACE_ID/TOKEN_V2, etc.) live in
+# the gitignored nocommit.notion.zsh — don't forget to create it on a new machine.
